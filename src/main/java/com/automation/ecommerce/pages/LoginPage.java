@@ -1,11 +1,11 @@
-package pages;
+package com.automation.ecommerce.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     private WebDriver driver;
     //locators
@@ -25,14 +25,8 @@ public class LoginPage extends BasePage{
     }
 
     // methods
-    public void enterEmail(String email) {
-        emailInput.sendKeys(email);
-    }
-
-    public void enterPassword(String password) {
-        passwordInput.sendKeys(password);
-    }
-
+    public void enterEmail(String email) { clearAndType(emailInput, email); }
+    public void enterPassword(String password) { clearAndType(passwordInput,password);}
     public void clickLogin() {
         loginButton.click();
     }
